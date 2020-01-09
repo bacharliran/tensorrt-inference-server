@@ -45,6 +45,7 @@ SequenceBatchScheduler::Create(
     const StandardInitFunc& OnInit, const StandardWarmupFunc& OnWarmup,
     const StandardRunFunc& OnSchedule,
     const StandardShapeTensorPeekFunc& OnPeek,
+    const std::unordered_map<std::string, bool>& enforce_equal_shape_tensors,
     std::unique_ptr<Scheduler>* scheduler)
 {
   std::unique_ptr<SequenceBatchScheduler> sched(new SequenceBatchScheduler());
